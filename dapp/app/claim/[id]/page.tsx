@@ -17,6 +17,7 @@ import { Magic } from "magic-sdk";
 import { FlowExtension } from "@magic-ext/flow";
 import { serverAuthorization } from "@/flow/relay";
 import "@/flow/config";
+import { toast } from "sonner";
 
 export default function ClaimGift({
   params,
@@ -227,7 +228,7 @@ export default function ClaimGift({
         } else if (res.status === 4) {
           console.error("Claim Transaction Failed:", res.errorMessage);
           setIsLoading(false);
-          alert("Claim failed. Please try again.");
+          toast.error("Claim failed. Please try again.");
         }
       });
     } catch (error) {

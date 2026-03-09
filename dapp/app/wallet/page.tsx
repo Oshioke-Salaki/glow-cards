@@ -21,12 +21,15 @@ import {
   ArrowDownLeft,
   Clock,
   ExternalLink,
+  ChevronLeft,
 } from "lucide-react";
 import { Magic } from "magic-sdk";
+import Link from "next/link";
 import { FlowExtension } from "@magic-ext/flow";
 import * as fcl from "@onflow/fcl";
 import { serverAuthorization } from "@/flow/relay";
 import "@/flow/config";
+import { toast } from "sonner";
 
 export default function WalletPortal() {
   const [email, setEmail] = useState("");
@@ -191,7 +194,9 @@ export default function WalletPortal() {
       }
     } catch (error: any) {
       console.error("Wallet Access Error:", error);
-      alert(error?.message || "Failed to access wallet. Please try again.");
+      toast.error(
+        error?.message || "Failed to access wallet. Please try again.",
+      );
     } finally {
       setIsLoading(false);
     }
@@ -244,7 +249,9 @@ export default function WalletPortal() {
 
       fcl.tx(txId).subscribe(async (res: any) => {
         if (res.status === 4 && res.errorMessage === "") {
-          alert(`Successfully sent ${amountFormat} FLOW to ${sendAddress}!`);
+          toast.success(
+            `Successfully sent ${amountFormat} FLOW to ${sendAddress}!`,
+          );
           setIsSending(false);
           setSendAmount("");
           setSendAddress("");
@@ -261,7 +268,7 @@ export default function WalletPortal() {
             cleanError = match[1];
           }
 
-          alert("Transfer Failed: " + cleanError);
+          toast.error("Transfer Failed: " + cleanError);
           setIsSending(false);
         }
       });
@@ -272,7 +279,7 @@ export default function WalletPortal() {
       if (match && match[1]) {
         cleanError = match[1];
       }
-      alert("Error initiating send: " + cleanError);
+      toast.error("Error initiating send: " + cleanError);
       setIsSending(false);
     }
   };
@@ -280,6 +287,14 @@ export default function WalletPortal() {
   if (address) {
     return (
       <div className="w-full max-w-md mx-auto space-y-8 animate-in zoom-in-95 duration-500 text-center">
+        <div className="flex justify-start -mb-4">
+          <Link
+            href="/"
+            className="flex items-center gap-1 text-[10px] uppercase tracking-widest text-muted-foreground/60 hover:text-white transition-colors font-semibold"
+          >
+            <ChevronLeft className="w-3 h-3" /> Back to Home
+          </Link>
+        </div>
         <div className="text-center space-y-3">
           <h1 className="text-4xl font-bold tracking-tight text-white/90">
             Your Wallet

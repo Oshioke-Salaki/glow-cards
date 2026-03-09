@@ -16,6 +16,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Sparkles, ArrowRight, Loader2, Wallet } from "lucide-react";
 import { useWallet } from "@/components/shared/WalletProvider";
+import { toast } from "sonner";
 
 export default function Home() {
   const [amount, setAmount] = useState<string>("100.00");
@@ -72,7 +73,7 @@ export default function Home() {
                   className="h-auto p-0 hover:bg-transparent hover:text-white shrink-0"
                   onClick={() => {
                     navigator.clipboard.writeText(claimUrl);
-                    alert("Link copied to clipboard!");
+                    toast.success("Link copied to clipboard!");
                   }}
                 >
                   Copy
