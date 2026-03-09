@@ -17,7 +17,7 @@ export async function POST(request: Request) {
     }
 
     const { data, error } = await resend.emails.send({
-      from: "GlowCards <onboarding@resend.dev>", // Testing domain provided by Resend
+      from: "GlowCards <gifts@glow-cards.xyz>", // Verified domain
       to: [email],
       subject: "You received a GlowCard Gift! ✨",
       html: `
