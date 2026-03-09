@@ -1,0 +1,32 @@
+{
+  "accounts": {
+    "testnet-admin": {
+      "address": "0x2515004a5408a7f0",
+      "key": "80e53c2ef4f634d1adc7e6f7514ec7d902ff4df22648ceb680741548fa98ec99"
+    }
+  },
+  "contracts": {
+    "FungibleToken": {
+      "source": "",
+      "aliases": {
+        "testnet": "9a0766d93b6608b7"
+      }
+    },
+    "FlowToken": {
+      "source": "",
+      "aliases": {
+        "testnet": "7e60df042a9c0868"
+      }
+    },
+    "GlowCardsV3": "./GlowCardsV3.cdc"
+  },
+  "networks": {
+    "testnet": "access.devnet.nodes.onflow.org:9000",
+    "mainnet": "access.mainnet.nodes.onflow.org:9000"
+  },
+  "deployments": {
+    "testnet": {
+      "testnet-admin": ["GlowCardsV3"]
+    }
+  }
+}
