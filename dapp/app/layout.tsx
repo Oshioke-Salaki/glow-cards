@@ -43,9 +43,6 @@ export default function RootLayout({
         </div>
         <WalletProvider>
           <main className="relative z-10 flex min-h-screen flex-col items-center justify-center p-6 md:p-24">
-            <nav className="absolute top-0 w-full p-6 flex justify-end max-w-5xl">
-              <WalletNavButton />
-            </nav>
             {children}
           </main>
         </WalletProvider>
