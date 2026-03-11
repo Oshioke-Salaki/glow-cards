@@ -123,7 +123,7 @@ export default function LandingPage() {
             >
               <div className="h-[1px] w-8 bg-emerald-500/50" />
               <span className="text-[9px] font-bold uppercase tracking-[0.4em] text-emerald-400/80">
-                Investment Grade Gifting
+                Next-Generation Gifting
               </span>
             </motion.div>
 
@@ -131,21 +131,19 @@ export default function LandingPage() {
               variants={itemVariants}
               className="text-[clamp(2.5rem,8vw,5.5rem)] font-black tracking-[-0.04em] leading-[0.9] mb-10"
             >
-              THE{" "}
+              THE GIFT THAT <br />
               <span className="text-transparent bg-clip-text bg-linear-to-b from-white to-white/20">
-                ETERNAL
-              </span>{" "}
-              <br />
-              VALUE CARD.
+                GROWS FOREVER.
+              </span>
             </motion.h1>
 
             <motion.p
               variants={itemVariants}
               className="max-w-lg text-lg md:text-xl text-white/40 leading-tight font-medium mb-12 text-pretty"
             >
-              Transform capital into connection. GlowCards are secure digital
-              assets that accrue yield on the Flow blockchain until the moment
-              of discovery.
+              Send meaningful digital gifts on the Flow blockchain. While your
+              recipient waits to discover it, their GlowCard accumulates real
+              compound yield.
             </motion.p>
 
             <motion.div
@@ -184,13 +182,13 @@ export default function LandingPage() {
               className="space-y-12"
             >
               <h2 className="text-5xl md:text-7xl font-black tracking-tighter leading-none">
-                BUILT ON <br />
-                <span className="text-emerald-400">STILLNESS.</span>
+                BUILT FOR <br />
+                <span className="text-emerald-400">LONGEVITY.</span>
               </h2>
               <p className="text-lg md:text-xl text-white/50 leading-relaxed font-medium">
-                Standard gifts lose value. GlowCards grow. By leveraging
-                Increment Fi's yield protocols, every card earns 5% APR,
-                compounding in real-time within an immutable Flow escrow.
+                Standard gifts lose value instantly. GlowCards grow. By
+                leveraging Increment Fi's yield protocols, your gift earns ~5%
+                APR, compounding in real-time within an immutable Flow escrow.
               </p>
 
               <div className="grid sm:grid-cols-2 gap-8 pt-8">
